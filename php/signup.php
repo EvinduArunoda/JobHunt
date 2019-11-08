@@ -46,7 +46,7 @@
 				<h6 class="pwd-rules">"Your password must contain at least 8 alphabetical[both (a-z)&(A-Z)] and numerical characters "</h6>
 				<input type="password" name="password" placeholder="Password" id="" required="">
 				<h5>Confirm Password</h5>
-				<input type="password" name="confirmedPassword" placeholder="Confirm Password" required="">
+				<input type="password" name="reconfirmedPassword" placeholder="Confirm Password" required="">
 				</br>
 				<input type="submit" name="signup_JS"value="Sign up" >
 
