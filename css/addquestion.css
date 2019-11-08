@@ -1,0 +1,88 @@
+body{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+	/*background: #34495e;*/
+
+}
+title{ color: #283747; font: 12px sans-serif} 
+header{
+	background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/office_17.jpeg);
+	height:150vh;
+	background-size: cover;
+	background-position: center;
+}
+
+.box{
+	width: 32%;
+	padding: 20px 40px 0 40px;
+	float: left;
+	margin: 3% 0 0 33%;
+	background:#D6EAF8  ;
+	text-align: center;
+	opacity: 0.9;
+}
+.box h2{
+	color: #283747;
+	font-weight: 500;
+}
+.box input[type="text"]{
+	border:0;
+	background:#AED6F1;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #CD6155;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: #1B2631 ;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+.box input[type="text"]{
+	width:280px;
+	border-color: #2E86C1 ;
+}
+.box input[type="submit"]{
+	border:0;
+	background: #AED6F1 ;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #CD6155;
+	padding: 14px 40px;
+	outline: none;
+	color:#1B2631 ;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	border-color: #2E86C1 ;
+}
+.box input[type="submit"]:hover{
+	border-color: #2E86C1 ;
+	background: #A3E4D7 ;
+}
+
+.box p{	
+	font-style: italic;
+	color: #17202A ;
+}
+
+.box a{
+	font-style: normal;
+	text-decoration: none;
+	color: #7B241C;
+}
+
+.box a:hover{
+	font-style: italic;
+}
+
+.box h6{
+	color: #283747;
+}
+
+.box h3{
+	color: #283747;
+}
