@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	<link rel="stylesheet" href="css/hr_login.css">
+	<link rel="stylesheet" href="../css/hr_login.css">
 	<meta charset="utf-8">
 	<title>HR Login</title>
 	<link rel="stylesheet" href="">

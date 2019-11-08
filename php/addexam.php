@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>addexam</title>
-	<link rel="stylesheet" href="css/addexam.css">
+	<link rel="stylesheet" href="../css/addexam.css">
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
