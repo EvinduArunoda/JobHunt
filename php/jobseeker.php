@@ -5,7 +5,6 @@ class jobseeker{
 	public $id;
 	public $firstname;
     public $lastname;
-    public $token;
     public $dob;
     public $gender;
     public $telephone;
@@ -18,14 +17,13 @@ class jobseeker{
     	$this->utility= new Utility();
     }
 
-    public function init($email,$password,$firstname,$lastname,$telephone,$gender,$address,$nic,$token){
+    public function init($email,$password,$firstname,$lastname,$telephone,$gender,$address,$nic,){
         $this->email=$email;
         $this->password=$password;
         $this->firstname=$firstname;
         $this->nic=$nic;
         $this->gender=$gender;
         $this->lastname=$lastname;
-        $this->token=$token;
         $this->telephone=$telephone;
     }
     //add seller to DB by signing up
@@ -34,26 +32,7 @@ class jobseeker{
         return $result;
 	}
     //fetch seller detailsfrom the DB and assign them to attribute variables
-    public function getBasicInfoByToken($token){
-        $result=$this->utility->getBasicInfoByToken($token);
-        if ($result){
-            $this->id=$result[0]['store_id'];
-            $this->name=$result[0]['store_name'];
-            $this->token=$token;
-            $this->company=$result[0]['company_name'];
-            $this->address=$result[0]['store_address'];
-            $this->telephone=$result[0]['telephone'];
-            $this->mobile=$result[0]['mobile'];
-            $this->regNo=$result[0]['registrationNumber'];
-            $this->website=$result[0]['website'];
-            $this->password=$result[0]['password'];
-            $this->email=$result[0]['store_email'];
-            $this->isActive=$result[0]['seller_isActive'];
-            return true;
-        }else{
-            return false;
-        }
-    }
+    
 
     public function getBasicInfoByEmail($email){
         $result=$this->utility->getBasicInfoByEmail($email);
@@ -68,8 +47,7 @@ class jobseeker{
             $this->regNo=$result[0]['registrationNumber'];
             $this->website=$result[0]['website'];
             $this->password=$result[0]['password'];
-            $this->token=$result[0]['token'];
-             $this->isActive=$result[0]['seller_isActive'];
+            $this->isActive=$result[0]['seller_isActive'];
             return true;
         }else{
             return false;

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>signup</title>
 	<link rel="stylesheet" href="../css/signup.css">
-	<link rel="stylesheet" href="css/signup.css">
+	<link rel="stylesheet" href=".../css/signup.css">
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<div class="main">
-			<form class="box" action="success.php" method="post">
+			<form class="box" action="manager.php" method="post">
 				<h2>SIGN UP</h2>
 				<br>
 				<h5>First Name</h5>
@@ -27,7 +27,7 @@
 				<h5>NIC</h5>
 				<input type="number" name="nic" placeholder="NIC" min ="0" required="">
 				<h5>Email Address</h5>
-				<input type="email" name="SellerEmail" placeholder="Email Address" required="">
+				<input type="email" name="Email" placeholder="Email Address" required="">
 				<h5>Gender</h5>
       			<!-- <label for="">Gender</label> -->
      			<select class="main" name="gender" type="email" placeholder="Gender"  >
@@ -48,7 +48,7 @@
 				<h5>Confirm Password</h5>
 				<input type="password" name="confirmedPassword" placeholder="Confirm Password" required="">
 				</br>
-				<input type="submit" name="signup_seller"value="Sign up" >
+				<input type="submit" name="signup_JS"value="Sign up" >
 
 				<P>Already have an account ? <a href="login.php"> Log In Here</a></P>
 			</form>

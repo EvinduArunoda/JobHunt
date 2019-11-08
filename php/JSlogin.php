@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	<link rel="stylesheet" href="css/jobseeker_login.css">
+	<link rel="stylesheet" href=".../css/jobseeker_login.css">
 	<meta charset="utf-8">
 	<title>JS Login</title>
 	<link rel="stylesheet" href="">
@@ -23,11 +23,11 @@
 <body>
 	<header>
 		<div class="main">
-			<form class="box" action="sucess.php" method="post">
+			<form class="box" action="manager.php" method="post">
 				<h1>LOG IN</h1>
-				<br><input type="email" name="SellerEmail" placeholder="Username" required="" id="">
+				<br><input type="email" name="JS_email" placeholder="Username" required="" id="">
 				<input type="password" name="password" placeholder="Password" required="" id=""><br>
-				<input type="submit" name="login_seller" value="Log in" >
+				<input type="submit" name="login_JS" value="Log in" >
 
 				<p>Don't have an account ? <a href="signup.php"> Sign Up Here</a></p>
 			</form>
