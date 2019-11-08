@@ -126,8 +126,7 @@ class manager{
 			//$connection = $db->getConnection(); 
 			echo "Logged In";
 			$_SESSION['set']="set";
-			$_SESSION['currentseller']=new seller();
-			$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
+			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
 			//if($gotInfo){
 			//	$gotlist=$this->getSellersItemList(); 
 			//	echo "<pre>";
@@ -147,5 +146,7 @@ class manager{
 	public function addexam(){
 		
 	}
+
+}
 
  ?>

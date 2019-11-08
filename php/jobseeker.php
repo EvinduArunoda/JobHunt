@@ -17,7 +17,7 @@ class jobseeker{
     	$this->utility= new Utility();
     }
 
-    public function init($email,$password,$firstname,$lastname,$telephone,$gender,$address,$nic,){
+    public function init($email,$password,$firstname,$lastname,$telephone,$gender,$address,$nic){
         $this->email=$email;
         $this->password=$password;
         $this->firstname=$firstname;
