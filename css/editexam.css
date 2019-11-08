@@ -5,10 +5,10 @@ body{
 	/*background: #34495e;*/
 
 }
-title{ color: #283747; font: 12px sans-serif} 
+/*title{ color: #283747; font: 12px sans-serif} */
 header{
-	background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/office_1.jpeg);
-	height:140vh;
+	background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/office_27.jpeg);
+	height:120vh;
 	background-size: cover;
 	background-position: center;
 }
@@ -18,48 +18,52 @@ header{
 	padding: 20px 40px 0 40px;
 	float: left;
 	margin: 3% 0 0 33%;
-	background:#F9EBEA ;
+	background:#FCF3CF  ;
 	text-align: center;
 	opacity: 0.9;
 }
 .box h2{
-	color: #283747;
+	color: #6E2C00;
 	font-weight: 500;
 }
-.box input[type="text"],.box input[type="number"]{
+.box input[type="text"],.box input[type="date"],.box input[type="number"]{
 	border:0;
-	background:#D98880;
+	background:#FAD7A0;
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #CD6155;
+	border: 2px solid #6E2C00;
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
-	color: white;
+	color: #6E2C00 ;
 	border-radius: 24px;
 	transition: 0.25s;
+	font-color:#6E2C00;
 }
-.box input[type="text"],.box input[type="number"]{
+.box input[type="text"],.box input[type="date"],.box input[type="number"]{
 	width:280px;
-	border-color: #CD6155;
+	border-color: #E9967A ;
 }
 .box input[type="submit"]{
 	border:0;
-	background: #E6B0AA ;
+	background: #FAD7A0 ;
 	display: block;
 	margin: 20px auto;
 	text-align: center;
 	border: 2px solid #CD6155;
 	padding: 14px 40px;
 	outline: none;
-	color: #283747;
+	color:#6E2C00 ;
 	border-radius: 24px;
 	transition: 0.25s;
 	cursor: pointer;
+	font-color:#6E2C00;
+	border-color: #E9967A ;
 }
 .box input[type="submit"]:hover{
-	background: #F5B7B1 ;
+	border-color: #E9967A ;
+	background: #FFA07A ;
 }
 
 .box p{	
@@ -78,12 +82,12 @@ header{
 }
 
 .box h6{
-	color: #283747;
+	color: #6E2C00;
 }
 
 .box h5{
-	color: #283747;
+	color: #6E2C00;
 }
 .box h3{
-	color: #283747;
+	color: #6E2C00;
 }

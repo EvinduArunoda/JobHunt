@@ -8,7 +8,7 @@ body{
 /*title{ color: #283747; font: 12px sans-serif} */
 header{
 	background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/office_10.jpeg);
-	height:110vh;
+	height:120vh;
 	background-size: cover;
 	background-position: center;
 }
@@ -85,6 +85,9 @@ header{
 	color: #6E2C00;
 }
 
+.box h5{
+	color: #6E2C00;
+}
 .box h3{
 	color: #6E2C00;
 }
