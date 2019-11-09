@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<style >
 		body  {
-  		background-image:linear-gradient(rgba(0,0,1,0.3),rgba(0,0,0,0.3)),url(img/office_28.jpeg);
+  		background-image:linear-gradient(rgba(0,0,1,0.3),rgba(0,0,0,0.3)),url(../img/office_28.jpeg);
   		/*opacity: 0.7;*/
   		height: 100%; 
   		/*background-position: center;*/
