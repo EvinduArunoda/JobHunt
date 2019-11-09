@@ -23,13 +23,13 @@
 <body>
 	<header>
 		<div class="main">
-			<form class="box" action="hr_home.php" method="post">
+			<form class="box" action="manager.php" method="post">
 				<h1>LOG IN</h1>
 				<br>
 				<input type="password" name="password" placeholder="Password" required="" id=""><br>
-				<input type="submit" name="login_seller" value="Log in" >
+				<input type="submit" name="hr_login" value="Log in" >
 
-				<p>Don't have an account ? <a href="hr_home.php"> Sign Up Here</a></p>
+				<p>Don't have an account ? <a href="jslogin.php"> Sign Up Here</a></p>
 			</form>
 		</div>
 	</header>

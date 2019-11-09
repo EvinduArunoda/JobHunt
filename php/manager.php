@@ -3,6 +3,7 @@
 	require_once('Utility.php');
 	require_once('initialize.php'); 
 	require_once('jobseeker.php');
+	require_once('hr.php');
 ?>
 
 <?php 
@@ -16,14 +17,18 @@ if(isset($_POST['signup_JS'])){
 }elseif (isset($_POST['add_job'])){
 	$manager->addjob();
 }
+// HR functios
 
-
+elseif (isset($_POST['hr_login'])){
+	$manager->hrlogin();
+}
 
 
 class manager{
 	private $mylogger;
 	private $msg;
 	private $JS;
+	private $isHR;
 	
 	private static $sessions=array();
 
@@ -40,7 +45,7 @@ class manager{
 
     private function __clone(){}
 
-
+    //////////////////// JS Functions /////////////////////
 
 	public function signupJS(){
 
@@ -160,11 +165,33 @@ class manager{
 
     	$utility=new Utility();
 		$job_added=$utility->addjob($email);
-
-
-
-		
+	
 	}
+
+
+
+	//////////////////////////////// HR Functions ////////////////
+
+	public function hrlogin(){
+
+		$psw=$_POST["password"];
+		$this->mylogger = new hr($psw);
+		$result=$this->mylogger->login_hr();
+		if ($result){
+			$_SESSION['set']="set";
+			$this->isHR=true;
+			//$this->getsellerRequestsList();
+			//$this->getitemRequestsList();
+			//$this->gettotalsellerList();
+			//$this->gettotalitemList();
+			header("Location:hr_home.php");
+		}else{
+			echo "something went wrong.Please try again";
+		}	
+	
+	}
+
+
 
 }
 

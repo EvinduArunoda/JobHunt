@@ -58,6 +58,60 @@
 		}
 
 
+
+		public function addjob($name,$des,$salary,$v_count,$p_count){
+			$query="INSERT INTO exam (Title,Description,Salary,VacancyCount,PositionCount) VALUES('$name','$des','$salary','$v_count','$p_count')";
+
+			$result=$this->controller->insertQuery($query);
+			return $result;
+
+
+			if($result){
+				header('Location: addDone.php');
+			}else{
+
+			}
+		}
+
+
+		public function addexam($name,$date,$time){
+			$query="INSERT INTO exam(title,D_L,duration) VALUES('$name', '$date','$time')";
+
+			$result=$this->controller->insertQuery($query);
+			return $result;
+
+
+			if($result){
+				header('Location: addDone.php');
+			}else{
+
+			}
+		}
+
+		public function addquestion($question,$ans1,$ans2,$ans3,$ans4,$ans_c){
+			$query="INSERT INTO questions(Q,A1,A2,A3,A4,Ans) VALUES('$question','$ans1','$ans2','$ans3','$ans4','$ans_c')";
+
+			$result=$this->controller->insertQuery($query);
+			return $result;
+
+
+			if($result){
+				header('Location: addDone.php');
+			}else{
+
+			}
+
+		}
+
+		public function checkHrPsw($password){
+			if ($password=="password123"){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
 	}
 
 ?>

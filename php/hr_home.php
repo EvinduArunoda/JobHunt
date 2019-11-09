@@ -1,3 +1,11 @@
+<?php 
+require_once('initialize.php');
+if
+(isset($_SESSION['set'])){}
+else{
+	header("Location:hrlogin.php");
+}?>
+
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -68,7 +76,7 @@
 					</div>
 
 					<center>	
-					<div class="logout"><a href="HRlogin.php"><img src='../img/logout-icon.png'><br><br>Logout</a></div>
+					<div class="logout"><a href="logout.php"><img src='../img/logout-icon.png'><br><br>Logout</a></div>
 				</center>
 
 				</div>
