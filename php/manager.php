@@ -126,6 +126,8 @@ class manager{
 			//$connection = $db->getConnection(); 
 			echo "Logged In";
 			$_SESSION['set']="set";
+			header("Location:selleracc.php");
+
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
 			//if($gotInfo){
 			//	$gotlist=$this->getSellersItemList(); 
@@ -150,6 +152,17 @@ class manager{
 	}
 
 	public function addjob(){
+
+		$pname=$_POST["pname"];
+   	 $price=$_POST["price"];
+    $img=$target_path;
+    $des=$_POST["des"];
+
+    	$utility=new Utility();
+		$job_added=$utility->addjob($email);
+
+
+
 		
 	}
 
