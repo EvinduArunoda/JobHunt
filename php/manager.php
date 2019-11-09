@@ -13,18 +13,17 @@ if(isset($_POST['signup_JS'])){
 	$manager->loginJS(); 	
 }elseif (isset($_POST['add_exam'])){
 	$manager->addexam();
+}elseif (isset($_POST['add_job'])){
+	$manager->addjob();
 }
+
 
 
 
 class manager{
 	private $mylogger;
 	private $msg;
-
 	private $JS;
-
-
-
 	
 	private static $sessions=array();
 
@@ -115,6 +114,7 @@ class manager{
 	//////////////////////////////////////////////////////////
 	public function loginJS(){
 		$this->msg = "";
+
 		$email=$_POST['JS_email'];
 		$psw=$_POST['password'];	
 		$this->mylogger = new logger($email,$psw);
@@ -143,7 +143,13 @@ class manager{
 		}
 	}
 
+
+
 	public function addexam(){
+		
+	}
+
+	public function addjob(){
 		
 	}
 
