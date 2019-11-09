@@ -5,17 +5,19 @@ $connection = $db->getConnection(); ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>NOVUS CREATIONS</title>
+	<title>Job Deatails</title>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<title>NOVUS CREATIONS</title>
 	<link rel="stylesheet" type="text/css" href="../css/view_job.css"> 
 </head>
 <body>
 	<div class="wrapper">
 		<header>
 			<div class="title">
+				<p>
+					<br>
+				</p>>
 				<h1><?php 
 					$jobid = $_GET['var'];
 					$query="SELECT * FROM job WHERE JobID='$jobid' ";
@@ -30,6 +32,7 @@ $connection = $db->getConnection(); ?>
 			</div>
 		</header>
 		<div class="rest">
+			
 			<div class="data">
 				
 

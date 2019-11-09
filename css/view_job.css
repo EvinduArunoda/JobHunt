@@ -9,12 +9,17 @@ body{
 }
 
 header{
-	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(../img/background3.jpg);
+
+	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url(../img/office_15.jpeg);
 	height: 30vh;
 	background-size: cover;
 	background-position: center;
 }
-
+h1{
+	font-size: 50px;
+	padding-top: 35px ;
+	padding-left: 35px ;
+}
 .wrapper{
 	width: 100%;
 }
@@ -34,6 +39,8 @@ header{
 .title h1{
 	color: #fff;
 	font-size: 50px;
+	padding-top: 35px ;
+	padding-left: 35px ;
 }
 
 .profile-data{
