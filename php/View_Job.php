@@ -34,7 +34,14 @@ $connection = $db->getConnection(); ?>
 		<div class="rest">
 			
 			<div class="data">
-				
+				<p>
+					<br>
+					<br>
+				</p>
+
+				<div class="profile-data clearfix" >
+			<img align="right" src="../img/emp.png" alt="employee" style="width:280px;height:250px;">
+		</div>
 
 				<div class="display-data clearfix">
 
