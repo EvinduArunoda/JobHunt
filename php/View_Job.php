@@ -16,7 +16,17 @@ $connection = $db->getConnection(); ?>
 	<div class="wrapper">
 		<header>
 			<div class="title">
-				<h1>JobHunt</h1>
+				<h1><?php 
+					$jobid = $_GET['var'];
+					$query="SELECT * FROM job WHERE JobID='$jobid' ";
+					$result=mysqli_query($connection,$query);
+
+					
+					if($result){
+						$row1 = mysqli_fetch_assoc($result);
+					}
+						echo $row1['Title'];					 
+					 ?></h1>
 			</div>
 		</header>
 		<div class="rest">
@@ -26,7 +36,6 @@ $connection = $db->getConnection(); ?>
 				<div class="display-data clearfix">
 
 					<?php 
-					$color = '';
 					$jobid = $_GET['var'];
 					$query="SELECT * FROM job WHERE JobID='$jobid' ";
 					$result=mysqli_query($connection,$query);
