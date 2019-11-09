@@ -15,6 +15,9 @@ $connection = $db->getConnection();
 <?php 
  	$folder = "";
 
+
+ 	
+
 	function display($row,$price,$folder){
 		echo "<div class='item-column'>";
 			echo "<div class='pict' id='img_dir'>";
