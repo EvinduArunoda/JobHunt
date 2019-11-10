@@ -51,36 +51,63 @@ header{
 	float: left;
 	padding: 5px;
 	width: 180px;
-	height:210px;
+	height:230px;
 	background-color: #666666;
 	margin: 20px 0 0 25px;
 	border-radius: 15px;
-	opacity: 0.7;
+	opacity: 0.9;
+}
+.box .additem1{
+	float: left;
+	padding: 5px;
+	width: 180px;
+	height:230px;
+	background-color: #666666;
+	margin: 20px 0 0 25px;
+	border-radius: 15px;
+	opacity: 0.9;
 }
 
 .box .additem a{
 	text-decoration: none;
 	color: #fff;
 }
+.box .additem1 a{
+	text-decoration: none;
+	color: #fff;
+}
 
 .box .additem img{
 	position: center;
+	width: 140px;
+	height:140px;
 	margin-top: 18px;
 }
-
+.box .additem1 img{
+	position: center;
+	width: 140px;
+	height:120px;
+	margin-top: 18px;
+}
 .box .additem:hover{
-	opacity: 0.9;
+	opacity: 0.7;
+}
+.box .additem1:hover{
+	opacity: 0.7;
 }
 
 .box .logout{
-	float: center;
+	float: right;
 	padding: 5px;
+	position:absolute;
+	top:150px;
+  	right: 100px;
 	width: 180px;
 	height: 200px;
 	background-color: #ff3333;
 	margin: 280px 80px 0 25px;
 	border-radius: 15px;
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 .box .logout a{
