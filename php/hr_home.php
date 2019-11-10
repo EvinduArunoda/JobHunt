@@ -57,7 +57,7 @@ else{
 					</div>
 
 					<div class="additem clearfix">
-					<a href="HR_View_Job.php"><img src='../img/job3.png'>
+					<a href="Alljobs.php"><img src='../img/job3.png'>
 					<br>
 					<br>View Job</a>
 					</div>
