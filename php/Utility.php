@@ -131,6 +131,17 @@
 			}
 		}
 
+		public function getexamtime($examID){
+			$query="SELECT duration FROM exam WHERE exam_id='$examID' ";
+			$result=$this->controller->runQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+
 
 	}
 

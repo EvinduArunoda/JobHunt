@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<div class="main">
-			<form class="box" action="success.php" method="post">
+			<form class="box" action="manager.php" method="post">
 				<h2>Add an Exam</h2>
 				</br>
 				<h5>Job</h5>
@@ -28,7 +28,7 @@
 				<input type="date" name="exam_date" placeholder="Exam date" required="">
 				
 				</br>
-				<input type="submit" name="signup_seller"value="Submit" >
+				<input type="submit" name="add_exam"value="Submit" >
 
 	
 			</form>

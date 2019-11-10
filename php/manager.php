@@ -173,8 +173,15 @@ class manager{
 	}
 
 	public function loadexam(){
+		$examID = 1;
+		$utility=new Utility();
+		$examtime=$utility->getexamtime($examID)[0];
 
+		$duration = $examtime['duration']*60;
+		$_SESSION['duration'] = $duration;
+		$_SESSION['start_time'] = time();
 		//$_SESSION['examID'] = 
+		header("Location:exam.php");
 
 	}
 

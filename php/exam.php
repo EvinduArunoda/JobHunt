@@ -29,8 +29,10 @@ require_once('utility.php'); ?>
 </head>
 
 <div class="container">
+<form action="manager.php" method="post">
 
 <?php 
+if((time()-$_SESSION['start_time'])<$_SESSION['duration']){
 $manager=new manager();
 $resultArr=$manager->load_exam_question(1);
 if (is_null($resultArr)){
@@ -44,12 +46,28 @@ if (is_null($resultArr)){
       <p class="card-text">'.'2. '.$result['A2'].'</p>
       <p class="card-text">'.'3. '.$result['A3'].'</p>
       <p class="card-text">'.'4. '.$result['A4'].'</p>
+      
+
+      <input type="text" name="'.$result['Q_id'].'" placeholder="Your Answer"  id=""><br>
+          
+
+      <input type="hidden" id="c_ans" name="c_ans" value='.$result['Ans'].'>
+
+     
     <div class="container">
       
       </div>
     </div>
   </div>');
-  };}?>
+  }
+  echo('<button type="submit" name="submit_answer" value="best">Submit Answer</button>');
+  echo ($_SESSION['duration']-(time()-$_SESSION['start_time']));
+};
+}else{
+  echo "end exam";
+}?>
+
+</form>
 </div>
 
 </div>
