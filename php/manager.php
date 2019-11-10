@@ -131,7 +131,7 @@ class manager{
 			//$connection = $db->getConnection(); 
 			echo "Logged In";
 			$_SESSION['set']="set";
-			header("Location:selleracc.php");
+			header("Location:sJSAcc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
 			//if($gotInfo){
