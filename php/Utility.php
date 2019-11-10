@@ -111,6 +111,26 @@
 			}
 		}
 
+		public function getUserIdInfoByEmail($email){
+			$query="SELECT JobseekerID FROM jobseeker WHERE Email='$email'";
+			$result=$this->controller->runQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+		public function load_exam_question($examID){
+			$query="SELECT * FROM questions,exam_q WHERE Q_id=question_id AND exam_id='$examID' ";
+			$result=$this->controller->runQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
 
 	}
 

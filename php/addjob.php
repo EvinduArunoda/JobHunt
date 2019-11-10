@@ -14,20 +14,20 @@
 <body>
 	<header>
 		<div class="main">
-			<form class="box" action="success.php" method="post">
+			<form class="box" action="manager.php" method="post">
 				<h2>Add a Job</h2>
 				<h5>Job Title</h5>
 				<input type="text" name="title" placeholder="Job Title" required="">
 				<h5>Job Description</h5>
 				<input type="text" name="description" placeholder="Description" required="">
 				<h5>Salary</h5>
-				<input type="number" min="0.01" step="0.01" max="99999999" placeholder="Salary in XXXX.XX form" />
+				<input type="number" name="salary" min="0.01" step="0.01" max="99999999" placeholder="Salary in XXXX.XX form" />
 				<h5>Vacancy Count</h5>
 				<input type="number" name="vacancy_count" placeholder="Vacancy Count" required="">
 				<h5>Position Count</h5>
 				<input type="number" name="position_count" placeholder="Position Count" required="">
 				</br>
-				<input type="submit" name="signup_seller"value="Submit" >
+				<input type="submit" name="add_job"value="Submit" >
 
 	
 			</form>

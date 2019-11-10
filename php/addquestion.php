@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<div class="main">
-			<form class="box" action="success.php" method="post">
+			<form class="box" action="manager.php" method="post">
 				<h2>Add a Question</h2>
 				</br>
 				<h5>Question</h5>
@@ -33,7 +33,7 @@
 				<input type="text" name="answer4" placeholder="Answer 4" required="">
 				
 				<h5>Correct Answer</h5>
-				<select class="main" name="gender" type="email" placeholder="Gender"  >
+				<select class="main" name="correctans" type="email" placeholder="Gender"  >
 		        <option>1.</option>
 		        <option>2.</option>
 		        <option>3.</option>
@@ -41,7 +41,7 @@
 		        </select>
 				<!-- <input type="text" name="correct_answer" placeholder="Correct Answer" required=""> -->
 				</br>
-				<input type="submit" name="signup_seller"value="Submit" >
+				<input type="submit" name="addquestion"value="Submit" >
 
 	
 			</form>

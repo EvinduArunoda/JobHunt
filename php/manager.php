@@ -16,6 +16,8 @@ if(isset($_POST['signup_JS'])){
 	$manager->addexam();
 }elseif (isset($_POST['add_job'])){
 	$manager->addjob();
+}elseif (isset($_POST['start_exam'])){
+	$manager->loadexam();
 }
 // HR functios
 
@@ -41,7 +43,7 @@ class manager{
         return self::$sessions[$key];
     }
 
-    private function __construct(){}
+    public function __construct(){}
 
     private function __clone(){}
 
@@ -131,7 +133,13 @@ class manager{
 			//$connection = $db->getConnection(); 
 			echo "Logged In";
 			$_SESSION['set']="set";
-			header("Location:selleracc.php");
+			$utility=new Utility();
+			$_SESSION['currentuser']= $utility -> getUserIdInfoByEmail($email)[0];
+
+
+			$_SESSION['UserID'] = $_SESSION['currentuser']['JobseekerID'];
+			echo $_SESSION['UserID'];
+			//header("Location:selleracc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
 			//if($gotInfo){
@@ -150,8 +158,6 @@ class manager{
 		}
 	}
 
-
-
 	public function addexam(){
 		
 	}
@@ -168,6 +174,23 @@ class manager{
 	
 	}
 
+	public function loadexam(){
+
+		//$_SESSION['examID'] = 
+
+	}
+
+	public function load_exam_question($examID){
+		$utility=new Utility();
+		$exam=$utility->load_exam_question($examID);
+
+		return($exam);
+
+
+
+
+
+	}
 
 
 	//////////////////////////////// HR Functions ////////////////
