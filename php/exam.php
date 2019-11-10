@@ -32,7 +32,8 @@ require_once('utility.php'); ?>
 <form action="manager.php" method="post">
 
 <?php 
-//$examID                 get exam id here somehow
+
+  $examID = 1;                 //get exam id here somehow
 
 if((time()-$_SESSION['start_time'])<$_SESSION['duration']){
 $manager=new manager();

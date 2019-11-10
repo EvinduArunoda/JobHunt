@@ -197,27 +197,34 @@ class manager{
 
 	
 	public function submitanswer(){
-		//$examID = $_POST[];
-		// $utility=new Utility();
-		// $exam=$utility->load_exam_question($examID);
+		$examID = $_POST['examID'];
+		$user = $_SESSION['UserID'];
+		$utility=new Utility();
+		$resultArr=$utility->load_exam_question($examID);
+
+		$mark = 0;
 
 
+		if (is_null($resultArr)){
+  			echo('no questions added yet.');
+		}else{
+  			foreach($resultArr as $result) {
+  				$q_id = $result['Q_id'];
+  				$correct_ans = $result['Ans'];
 
-		// if (is_null($resultArr)){
-  // 			echo('no questions added yet.');
-		// }else{
-  // 			foreach($resultArr as $result) {
-  // 				$q_id = $result['Q_id']
-  // 				$correct_ans = $result['Ans']
+  				$answer = $_POST[$q_id];
 
-
-
+  				if($answer == $correct_ans){
+  					$mark = $mark + 1;
+  				}
   
-		// }
+		}
 
-		// return($exam);
+		$submitted = $utility->submit_grade($examID,$user,$mark);
 
+		echo $mark;
 	}
+}
 
 	//////////////////////////////// HR Functions ////////////////
 

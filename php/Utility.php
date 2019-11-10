@@ -141,6 +141,16 @@
 			}
 		}
 
+		public function submit_grade($examID,$user,$mark){
+			$query="INSERT INTO results(exam_id,user_id,mark) VALUES('$examID','$user','$mark')";
+			$result=$this->controller->InsertQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
 
 
 	}
