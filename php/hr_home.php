@@ -27,7 +27,7 @@ else{
 			<div class="title">
 				<br>
 				<br>
-				<h1>Manage</h1>
+				<h1>Home</h1>
 				</div>
 		<br>
 		<br>
@@ -39,45 +39,57 @@ else{
 				
 					
 					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/icon.png'>
+					<a href="addjob.php"><img src='../img/addjob.png'>
 					<br>
 					<br>Add New Job</a>
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addquestion.php"><img src='../img/icon.png'>
+					<a href="addquestion.php"><img src='../img/naq.png'>
 					<br>
 					<br>Add New Question</a>
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addexam.php"><img src='../img/icon.png'>
+					<a href="addexam.php"><img src='../img/exam7.jpg'>
 					<br>
 					<br>Add New Exam</a>
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/view_icon.png'>
+					<a href="Alljobs.php"><img src='../img/job3.png'>
 					<br>
 					<br>View Job</a>
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/view_icon.png'>
+					<a href="questionbankview.php"><img src='../img/qna.png'>
 					<br>
 					<br>View Questions</a>
 					</div>
 
-					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/view_icon.png'>
+					<div class="additem1 clearfix">
+					<a href="candidateview.php"><img src='../img/candidate.png'>
 					<br>
 					<br>Manage
-					<br>Applications</a>
+					<br>Candidates</a>
 					</div>
 
-					<center>	
+					<div class="additem clearfix">
+					<a href="addjob.php"><img src='../img/message.png'>
+					<br>
+					<br>Messages</a>
+					</div>
+
+					<div class="additem clearfix">
+					<a href="addjob.php"><img src='../img/notification.png'>
+					<br>
+					<br>Notification</a>
+					</div>
+
+						
 					<div class="logout"><a href="logout.php"><img src='../img/logout-icon.png'><br><br>Logout</a></div>
-				</center>
+				
 
 				</div>
 			</div>
