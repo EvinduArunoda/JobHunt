@@ -32,6 +32,8 @@ require_once('utility.php'); ?>
 <form action="manager.php" method="post">
 
 <?php 
+//$examID                 get exam id here somehow
+
 if((time()-$_SESSION['start_time'])<$_SESSION['duration']){
 $manager=new manager();
 $resultArr=$manager->load_exam_question(1);
@@ -49,9 +51,6 @@ if (is_null($resultArr)){
       
 
       <input type="text" name="'.$result['Q_id'].'" placeholder="Your Answer"  id=""><br>
-          
-
-      <input type="hidden" id="c_ans" name="c_ans" value='.$result['Ans'].'>
 
      
     <div class="container">
@@ -60,11 +59,13 @@ if (is_null($resultArr)){
     </div>
   </div>');
   }
-  echo('<button type="submit" name="submit_answer" value="best">Submit Answer</button>');
+  echo('<input type="hidden" id="examID" name="examID" value='.$examID.'>
+    <button type="submit" name="submit_answer" value="best">Submit Answer</button>');
   echo ($_SESSION['duration']-(time()-$_SESSION['start_time']));
 };
 }else{
   echo "end exam";
+  echo('<button type="submit" name="submit_answer" value="best">Submit Answer</button>');
 }?>
 
 </form>

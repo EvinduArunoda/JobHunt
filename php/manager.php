@@ -18,6 +18,8 @@ if(isset($_POST['signup_JS'])){
 	$manager->addjob();
 }elseif (isset($_POST['start_exam'])){
 	$manager->loadexam();
+}elseif (isset($_POST['submit_answer'])){
+	$manager->submitanswer();
 }
 // HR functios
 
@@ -191,12 +193,31 @@ class manager{
 
 		return($exam);
 
-
-
-
-
 	}
 
+	
+	public function submitanswer(){
+		//$examID = $_POST[];
+		// $utility=new Utility();
+		// $exam=$utility->load_exam_question($examID);
+
+
+
+		// if (is_null($resultArr)){
+  // 			echo('no questions added yet.');
+		// }else{
+  // 			foreach($resultArr as $result) {
+  // 				$q_id = $result['Q_id']
+  // 				$correct_ans = $result['Ans']
+
+
+
+  
+		// }
+
+		// return($exam);
+
+	}
 
 	//////////////////////////////// HR Functions ////////////////
 
