@@ -90,10 +90,10 @@ $query = $q->fetch_assoc();
             <hr>
         </div>
         <?php
-            }
+            
         ?>
     <?php
-}
+
 ?>
     </div>
 

@@ -149,7 +149,11 @@ class manager{
 			$utility=new Utility();
 			$_SESSION['currentuser']= $utility -> getUserIdInfoByEmail($email)[0];
 			$_SESSION['UserID'] = $_SESSION['currentuser']['JobseekerID'];
-		
+			$_SESSION['JobseekerID']=$_SESSION['UserID'];
+			$_SESSION['Email'] = 'username';
+
+
+			header("Location:index.php");
 			//header("Location:selleracc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));

@@ -9,9 +9,9 @@ else{
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	 <meta charset="utf-8">
+	 <meta charset="utf-8"> 
 	<title>HR home page</title>
-
+	
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -23,32 +23,24 @@ else{
 <body>
 	<div class="wrapper">
 
-		<header >
-			<div style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../img/office_31.jpeg">
-			<div class="title" >
+		<header>
+			<div class="title">
 				<br>
 				<br>
-				<h1 style="font-family: cursive;font-size: 80px;font-color:floral white">JOB HUNT</h1>
+				<h1 style="font-family: sans serif;font-size: 80px;font-color:floral white">JOB HUNT</h1>
 				</div>
 		<br>
 		<br>
 		<br>
-		<br>		<br>
-				<br>
-				<br>
-				<br>
-		</div>
-		<form  action="job.php" >
-        <div class="input-group" style="width:30%;height:350px;margin-left:50%;margin-top:-5%">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"style="width:10%;height: 15%" name="search">
+		<br>
+        <div class="input-group" style="width:30%;height:50%;margin-left:50%">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"style="width:10%;height: 10%" name="search">
         <div class="input-group-append" style="width:20%">
-          <button class="btn btn-primary" type="submit" style="background-color:#2C3E50;color:floralwhite;height:15%;width:40%">
+          <button class="btn btn-primary" type="submit" style="background-color:#2C3E50;color:floralwhite;height:10%;width:40%">
             <i class="fa fa-search"></i>
           </button>
         </div>
             </div>
-					</form>
-
 		<div class="box clearfix">
 		<div class="rest">
 			<div class="data clearfix">
@@ -60,34 +52,39 @@ else{
 					</div>
 
 					<div class="additem clearfix">
-					<a href="viewprofile.php"><img src='../img/profile.png' style="width: 80%;height:5=80%">
+					<a href="addjob.php"><img src='../img/profile.png' style="width: 80%;height:5=80%">
 					<br>
-					<br>Profile</a>
+					<br>View Profile</a>
 					</div>
 
 					<div class="additem clearfix">
 					<a href="addjob.php"><img src='../img/application.png' style="width: 50%;height:50%">
 					<br>
-					<br>View
+					<br>View 
 					<br>Applications History</a>
 					</div>
-
+                
                     <div class="additem clearfix">
 					<a href="addjob.php"><img src='../img/notification.png' style="width: 50%;height:5=50%">
 					<br>
-					<br>View
+					<br>View 
 					<br>Notifications</a>
 					</div>
+                    <div class="additem clearfix">
+					<a href="addjob.php"><img src='../img/editprofile.png' style="width: 60%;height:60%">
+					<br>
+					<br>Edit Profile</a>
+					</div>
 
-					<center>
+					<center>	
 					<div class="logout"><a href="logout.php"><img src='../img/logout-icon.png'><br><br>Logout</a></div>
 				</center>
 
 				</div>
 			</div>
 		</div>
-
+	
 	</header>
-
+	
 </body>
 </html>
