@@ -66,6 +66,7 @@ if (is_null($resultArr)){
 };
 }else{
   echo "end exam";
+  echo ($_SESSION['duration']);
   echo('<button type="submit" name="submit_answer" value="best">Submit Answer</button>');
 }?>
 
