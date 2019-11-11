@@ -58,9 +58,8 @@
 		<tr style="text-align: center;">
 			<th style="width: 55%">Job title</th>
 			
-			<th style="width: 15%">View</th>
-			<th style="width: 15%">Edit</th>
-			<th style="width: 15%">Remove</th>
+			<th style="width: 15%">View Candidates</th>
+			
 		</tr>
 
 <?php 
@@ -73,9 +72,8 @@
 		<form class=\"box\" action=\"manager.php\" method=\"post\">
 			<input type='hidden' name='JobID' value=". $JobID . ">
 			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$title."</td>
-			<td>" . '<a href="HR_View_Job.php?var='.$JobID.'">'. "View" .'</a>' .  "</td>
-			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="Edit_Job" type="submit" value="'.$JobID .'" >Edit</button>'. "</td>
-			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="remove_Job" type="submit" value="'.$JobID .'" >Remove</button>'. "</td>
+			<td>" . '<a href="Candidateview.php?var='.$JobID.'">'. "View" .'</a>' .  "</td>
+			
 			</form>
 		</tr>";
 	}

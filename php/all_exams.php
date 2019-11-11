@@ -33,25 +33,14 @@ require_once('utility.php'); ?>
 
 <?php 
 
-  $examID = 7;                 //get exam id here somehow
-
-if((time()-$_SESSION['start_time'])<$_SESSION['duration']){
 $manager=new manager();
-$resultArr=$manager->load_exam_question($examID);
-if (is_null($resultArr)){
-  echo('no questions added yet.');
-}else{
-  foreach($resultArr as $result) {
+$manager->getAllExam();
+
+  foreach($_SESSION['AllExam'] as $result) {
     echo ('<div class="card border-success mb-3" >
     <div class="card-body">
-      <h4 class="card-title">'.$result['Q'].'</h4>
-      <p class="card-text">'.'1. '.$result['A1'].'</p>
-      <p class="card-text">'.'2. '.$result['A2'].'</p>
-      <p class="card-text">'.'3. '.$result['A3'].'</p>
-      <p class="card-text">'.'4. '.$result['A4'].'</p>
-      
-
-      <input type="text" name="'.$result['Q_id'].'" placeholder="Your Answer"  id=""><br>
+      <h4 class="card-title">'.$result['Title'].'</h4>
+      <button type="submit" name="AddExamto_Job" value="'.$result['exam_id'].'">Add to Job</button>
 
      
     <div class="container">
@@ -60,14 +49,10 @@ if (is_null($resultArr)){
     </div>
   </div>');
   }
-  echo('<input type="hidden" id="examID" name="examID" value='.$examID.'>
-    <button type="submit" name="submit_answer" value="best">Submit Answer</button>');
-  echo ($_SESSION['duration']-(time()-$_SESSION['start_time']));
-};
-}else{
-  echo "end exam";
-  echo('<button type="submit" name="submit_answer" value="best">Submit Answer</button>');
-}?>
+
+
+  echo '<li><a href="hr_home.php">Back</a></li>';
+  ?>
 
 </form>
 </div>

@@ -18,14 +18,25 @@ if(isset($_POST['signup_JS'])){
 	$manager->addjob();
 }elseif (isset($_POST['start_exam'])){
 	$manager->loadexam();
-}elseif (isset($_POST['submit_answer'])){
-	$manager->submitanswer();
+}elseif (isset($_POST['remove_Job'])){
+	$manager->removeJob();
 }
 // HR functios
 
 elseif (isset($_POST['hr_login'])){
 	$manager->hrlogin();
+}elseif (isset($_POST['submit_answer'])){
+	$manager->submitanswer();
+}elseif (isset($_POST['Add_toExam'])){
+	$manager->addtoexam();
+}elseif (isset($_POST['addexamtojob'])){
+	$manager->addexamtojob();
+}elseif (isset($_POST['AddExamto_Job'])){
+	$manager->AddExamto_Job();
+}elseif (isset($_POST['addquestion'])){
+	$manager->addquestion();
 }
+
 
 
 class manager{
@@ -159,18 +170,40 @@ class manager{
 	}
 
 	public function addexam(){
+		$job=$_POST['job'];
+   	 	$hrs=$_POST['hrs'];
+    	$min=$_POST['min'];
+    	$exam_date=$_POST['exam_date'];
+    	$duration = (int)$min + (int)$hrs*60;
+   		
+   		$utility=new Utility();
+		$job_added=$utility->addexam($job,$duration,$exam_date);
+
+		if($job_added){
+			$jobIDarray = $utility->getexamID($job)[0];
+			$jobID = $jobIDarray['exam_id'];
+			$_SESSION['current_jb_id']=$jobID;
+
+			header("Location:sel_questions.php");			
+
+		}
+
 		
 	}
 
 	public function addjob(){
 
-		$pname=$_POST["pname"];
-   	 $price=$_POST["price"];
-    $img=$target_path;
-    $des=$_POST["des"];
+		$name=$_POST['title'];
+   	 	$des=$_POST['description'];
+    	$salary=$_POST['salary'];
+    	$v_count=$_POST['vacancy_count'];
+    	$p_count=$_POST['position_count'];
 
     	$utility=new Utility();
-		$job_added=$utility->addjob($email);
+		$job_added=$utility->addjob($name,$des,$salary,$v_count,$p_count);
+		$this->getAllJobList();
+		header("Location:hr_home.php");
+
 	
 	}
 
@@ -236,8 +269,8 @@ class manager{
 		if ($result){
 			$_SESSION['set']="set";
 			$this->isHR=true;
-			//$this->getsellerRequestsList();
-			//$this->getitemRequestsList();
+			$this->getAllJobList();
+			$this->getAllQuestion();
 			//$this->gettotalsellerList();
 			//$this->gettotalitemList();
 			header("Location:hr_home.php");
@@ -245,6 +278,96 @@ class manager{
 			echo "something went wrong.Please try again";
 		}	
 	
+	}
+
+	public function getAllJobList(){
+		$utility= new Utility();
+		$AllJobs=$utility->getAllJobList();
+		if ($AllJobs){
+			$_SESSION['AllJobs']=$AllJobs;
+		}
+	}
+
+	public function getAllQuestion(){
+		$utility= new Utility();
+		$AllQuestions=$utility->getAllQuestion();
+		if ($AllQuestions){
+			$_SESSION['AllQuestions']=$AllQuestions;
+		}
+	}
+
+	public function removeJob(){
+
+		$jobid = $_POST['remove_Job'];
+
+		$utility= new Utility();
+		$AllQuestions=$utility->removeJob($jobid);
+		
+	}
+
+	public function addtoexam(){
+
+		foreach($_SESSION['AllQuestions'] as $result) {
+			if($result['Q_id'] = $_POST['Add_toExam']){
+				$q_id = $result['Q_id'];
+			}
+    	
+  		}
+
+		$exam = $_SESSION['current_jb_id'];
+
+		$utility= new Utility();
+		$result=$utility->addtoexam($q_id,$exam);
+
+		header("Location:sel_questions.php");	
+	}
+
+	public function addexamtojob(){
+		$_SESSION['addexamjob'] = $_POST['addexamtojob'];
+
+		header("Location:all_exams.php");
+
+
+	}
+
+	public function getAllExam(){
+		$utility= new Utility();
+		$AllExam=$utility->getAllExam();
+		if ($AllExam){
+			$_SESSION['AllExam']=$AllExam;
+		}
+	}
+
+	public function AddExamto_Job(){
+		$exam_id = $_POST['AddExamto_Job'];
+		$job_id = $_SESSION['addexamjob'];
+
+		echo $exam_id;
+		echo $job_id;
+		$utility= new Utility();
+		$added=$utility->addtojob($exam_id,$job_id);
+
+		header("Location:hr_home.php");
+
+
+		
+	}
+
+	public function addquestion(){
+		$question=$_POST['question'];
+   	 	$A1=$_POST['answer1'];
+    	$A2=$_POST['answer2'];
+    	$A3=$_POST['answer3'];
+    	$A4=$_POST['answer4'];
+    	$CA = $_POST['correctans'];
+
+    	$utility= new Utility();
+		$added=$utility->addquestion($question,$A1,$A2,$A3,$A4,$CA);
+		$this->getAllQuestion();
+		header("Location:hr_home.php");
+
+
+		
 	}
 
 

@@ -1,3 +1,9 @@
+
+<?php 
+	require_once('initialize.php'); 
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,36 +62,19 @@
 		</tr>
 
 <?php 
-	$totsellerlist=$_SESSION['totsellerlist'];
-	foreach ($totsellerlist as $seller){
-		if($seller['seller_isActive']==1){
-		$companyname=$seller['companyName'];
-		$storename=$seller['store_name'];
-		$sellerid=$seller['store_id'];
-		if ($seller['seller_isActive']==1){
-			$isActive="active";
-		}else{
-			$isActive="Inactive";
-		}
-		$address=$seller['store_address'];
-		$website=$seller['website'];
-		$email=$seller['store_email'];
-		$telephone=$seller['telephone'];
+	$AllQuestions=$_SESSION['AllQuestions'];
+	foreach ($AllQuestions as $question){
+		$questionID = $question['Q_id'];
+		$content = $question['Q'];
 		echo "<tr>
 		<form class=\"box\" action=\"manager.php\" method=\"post\">
-			<input type='hidden' name='requestedseller' value=". $sellerid . ">
-			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$companyname."</td>
-			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$storename."</td>
-			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$email."</td>
-			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$address."</td>
-			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$website."</td>
-			<td style='text-align: center; border: 1px solid #3d3d29;'>".$telephone."</td>
-			<td style='text-align: center; border: 1px solid #3d3d29;'>".$isActive."</td>
-			<td style='text-align: center; border: 1px solid #3d3d29;'>" . '<input type="submit" name="edit_this_seller" value="Edit" >' .  "</td>
-			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="remove_this_seller" type="submit" value="'.$sellerid .'" >Remove</button>'. "</td>
+			<input type='hidden' name='Q_id' value=". $questionID . ">
+			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$content."</td>
+			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="Edit_Q" type="submit" value="" >Edit</button>'. "</td>
+			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="Remove_Q" type="submit" value="" >Remove</button>'. "</td>
 			</form>
 		</tr>";
-	}}
+	}
 	echo "</table>";
  ?>
 

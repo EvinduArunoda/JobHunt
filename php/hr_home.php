@@ -69,7 +69,7 @@ else{
 					</div>
 
 					<div class="additem1 clearfix">
-					<a href="candidateview.php"><img src='../img/candidate.png'>
+					<a href="candidate_by_job.php"><img src='../img/candidate.png'>
 					<br>
 					<br>Manage
 					<br>Candidates</a>

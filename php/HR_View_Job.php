@@ -57,11 +57,13 @@ $connection = $db->getConnection(); ?>
 						echo "<table><tr><td>Job Title : </td><td>".$row1['Title']."<br></td></tr><tr><td>Description : </td><td>".$row1['Description']."</td></tr><tr><td>Salary : </td><td>".$row1['Salary']."<br></td></tr><tr><td>No of Vacancies : </td><td>".$row1['VacancyCount']."<br></td></tr><tr><td>No of Positions : </td><td>".$row1['PositionCount']."<br></td></tr></table>";					 
 					 ?>
 				</div>
+				<form action="manager.php" method = "post">
 				<div>
-					<a href="../php/hr_home.php" > 
-			<button type="button" class="button button1">Add</button>
+			<?php echo ('
+			<button type="submit" name="addexamtojob" value = "'.$jobid.'" class="button button1">Add</button>');?>
 		</a>
 		</div>
+	</form>
 			</div>
 			<div>
 					<a href="../php/editjob.php" > 

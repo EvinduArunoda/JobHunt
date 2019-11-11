@@ -27,7 +27,7 @@
 				<h1>LOG IN</h1>
 				<br>
 				<input type="password" name="password" placeholder="Password" required="" id=""><br>
-				<input type="submit" name="start_exam" value="Log in" >
+				<input type="submit" name="hr_login" value="Log in" >
 
 				<p>Don't have an account ? <a href="jslogin.php"> Sign Up Here</a></p>
 			</form>

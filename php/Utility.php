@@ -1,6 +1,6 @@
 <?php 
 	 require_once('DBController.php');
-	 require_once('config.php');
+	 require_once('config.php'); 
 	?>
 
 
@@ -60,7 +60,7 @@
 
 
 		public function addjob($name,$des,$salary,$v_count,$p_count){
-			$query="INSERT INTO exam (Title,Description,Salary,VacancyCount,PositionCount) VALUES('$name','$des','$salary','$v_count','$p_count')";
+			$query="INSERT INTO job (Title,Description,Salary,VacancyCount,PositionCount) VALUES('$name','$des','$salary','$v_count','$p_count')";
 
 			$result=$this->controller->insertQuery($query);
 			return $result;
@@ -74,18 +74,20 @@
 		}
 
 
-		public function addexam($name,$date,$time){
-			$query="INSERT INTO exam(title,D_L,duration) VALUES('$name', '$date','$time')";
+		public function addexam($job,$duration,$exam_date){
+			$query="INSERT INTO exam(title,D_L,duration) VALUES('$job', '$exam_date','$duration')";
 
 			$result=$this->controller->insertQuery($query);
 			return $result;
 
+		}
 
-			if($result){
-				header('Location: addDone.php');
-			}else{
+		public function getexamID($job){
+			$query="SELECT exam_id from exam WHERE Title='$job'";
 
-			}
+			$result=$this->controller->runQuery($query);
+			return $result;
+
 		}
 
 		public function addquestion($question,$ans1,$ans2,$ans3,$ans4,$ans_c){
@@ -143,13 +145,76 @@
 
 		public function submit_grade($examID,$user,$mark){
 			$query="INSERT INTO results(exam_id,user_id,mark) VALUES('$examID','$user','$mark')";
-			$result=$this->controller->InsertQuery($query);
+			$result=$this->controller->insertQuery($query);
 			if($result){
 				return $result;
 			}else{
 				return null;
 			}
 		}
+
+		public function getAllJobList(){
+			$query="SELECT * FROM job";
+			$result=$this->controller->runQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+		public function getAllQuestion(){
+			$query="SELECT * FROM questions";
+			$result=$this->controller->runQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+		public function removeJob($jobid){
+			$query="DELETE FROM job WHERE JobID = '$jobid'";
+			$result=$this->controller->runQuery($query);
+			
+		}
+
+		public function addtoexam($q_id,$exam){
+
+			
+			$query="INSERT INTO exam_q (exam_id,question_id) VALUES('$exam','$q_id')";
+			$result=$this->controller->insertQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+		public function getAllExam(){
+			$query="SELECT * FROM exam";
+			$result=$this->controller->runQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+		public function addtojob($exam_id,$job_id){
+			
+
+			$query = "UPDATE job SET exam_id='$exam_id' WHERE JobID='$job_id'";
+			$result=$this->controller->updateQuery($query);
+			return $result;
+		}
+
+
+		
+
+
+
+
 
 
 
