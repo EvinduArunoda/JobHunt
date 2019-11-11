@@ -19,7 +19,7 @@ $connection = $db->getConnection(); ?>
 					<br>
 				</p>>
 				<h1><?php 
-					$jobid = $_GET['var'];
+					$jobid = $_GET['JobSeekerID'];
 					$query="SELECT * FROM job WHERE JobID='$jobid' ";
 					$result=mysqli_query($connection,$query);
 
@@ -46,7 +46,7 @@ $connection = $db->getConnection(); ?>
 				<div class="display-data clearfix">
 
 					<?php 
-					$jobid = $_GET['var'];
+					$jobid = $_GET['JobSeekerID'];
 					$query="SELECT * FROM job WHERE JobID='$jobid' ";
 					$result=mysqli_query($connection,$query);
 

@@ -1,6 +1,6 @@
 .clearfix{
 	overflow: auto;
-    
+
 }
 
 body{
@@ -46,7 +46,7 @@ header{
 	float: right;
 	text-align: center;
 	background-color: transparent;
-    margin-top: -20%;
+    margin-top: -10%;
 }
 
 .box .additem{
