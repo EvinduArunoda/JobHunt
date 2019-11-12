@@ -58,7 +58,7 @@
 		<tr style="text-align: center;">
 			<th style="width: 55%">Job title</th>
 			
-			<th style="width: 15%">View Candidates</th>
+			<th style="width: 15%">View</th>
 			
 		</tr>
 
@@ -72,16 +72,11 @@
 		<form class=\"box\" action=\"manager.php\" method=\"post\">
 			<input type='hidden' name='JobID' value=". $JobID . ">
 			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$title."</td>
-			<td>" . '<a href="Candidateview.php?var='.$JobID.'">'. "View" .'</a>' .  "</td>
 			
+			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="viewapplicants" type="submit" value="'.$JobID .'" >View</button>'. "</td>
 			</form>
 		</tr>";
 	}
 	echo "</table>";
  ?>
 
-
- </table>
- </center>
-</body>
-</html>

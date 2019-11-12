@@ -209,6 +209,42 @@
 			return $result;
 		}
 
+		public function addvacancy($jobid){
+
+			$status = 1;
+			
+			$query="INSERT INTO jobvacancy (JobID,Status) VALUES('$jobid','$status')";
+			$result=$this->controller->insertQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+		public function viewapplicants($jobid){
+
+			$query1="SELECT VacancyID FROM jobvacancy WHERE JobID='$jobid' ";
+			$result1=$this->controller->runQuery($query1);
+			$vacancy_id = $result1[0]['VacancyID'];
+
+			$query2="SELECT exam_id FROM job WHERE JobID='$jobid' ";
+			$result2=$this->controller->runQuery($query2);
+			$exam_id = $result2[0]['exam_id'];
+
+
+
+			$query3="SELECT FirstName,JobseekerID FROM jobseeker,application WHERE VacancyID='$vacancy_id' ";
+			$result3=$this->controller->runQuery($query3);
+
+			if($result3){
+				return $result3;
+			}else{
+				return null;
+			}
+		}
+
+
 
 		
 

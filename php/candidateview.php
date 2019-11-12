@@ -1,3 +1,9 @@
+
+<?php 
+	require_once('initialize.php'); 
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,11 +58,31 @@
 		<tr style="text-align: center;">
 			<th style="width: 20%">Job Seeker ID</th>
 			<th style="width: 40%">Job Seeker Name</th>
-			<th style="width: 10%">Results</th>
 			<th style="width: 10%">View</th>
 			<th style="width: 10%">Recruite</th>
 			<th style="width: 10%">Decline</th>
 		</tr>
+
+		<?php 
+			$applicants=$_SESSION['applicants'];
+			
+			foreach ($applicants as $applicant){
+		
+		$Firstname=$applicant['FirstName'];
+		$js_id = $applicant['JobseekerID'];
+		echo "<tr>
+		<form class=\"box\" action=\"manager.php\" method=\"post\">
+			<input type='hidden' name='applicantID' value=". $js_id . ">
+			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$js_id."</td>
+			<td style='border: 1px solid #3d3d29; padding:0.5%;'>".$Firstname."</td>
+			<td>" . '<a href="HR_View_Job.php?var='.$js_id.'">'. "View" .'</a>' .  "</td>
+			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="recruite" type="submit" value="'.$js_id .'" >Edit</button>'. "</td>
+			<td style='text-align: center; border: 1px solid #3d3d29;'>"  . '<button name="decline" type="submit" value="'.$js_id .'" >Remove</button>'. "</td>
+			</form>
+		</tr>";
+	}
+	echo "</table>";
+ ?>
  </table>
  </center>
 </body>
