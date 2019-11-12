@@ -76,7 +76,7 @@ else{
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/message.png'>
+					<a href="message.php"><img src='../img/message.png'>
 					<br>
 					<br>Messages</a>
 					</div>

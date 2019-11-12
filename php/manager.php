@@ -124,10 +124,10 @@ class manager{
 			}
 			if($this->msg == "Done"){}
 			else{
-			//header("Location:SignupError.php?msg=".$this->msg);}
-			echo $this->msg;
+			header("Location:SignupError.php?msg=".$this->msg);}
+			
 
-		}
+		
 	}
 
 
@@ -153,7 +153,7 @@ class manager{
 			$_SESSION['Email'] = 'username';
 
 
-			header("Location:index.php");
+			header("Location:message.php");
 			//header("Location:selleracc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
@@ -169,7 +169,7 @@ class manager{
 		}
 		else{
 			$this->msg = "Password, Username mismatch";
-			header("Location:LoginError.php");
+			header("Location:SignupError.php?msg=".$this->msg);
 		}
 	}
 
@@ -272,6 +272,9 @@ class manager{
 		$result=$this->mylogger->login_hr();
 		if ($result){
 			$_SESSION['set']="set";
+			$_SESSION['JobseekerID']= 1 ;
+			$_SESSION['Email'] = 'HR team';
+
 			$this->isHR=true;
 			$this->getAllJobList();
 			$this->getAllQuestion();
