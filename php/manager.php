@@ -39,6 +39,8 @@ elseif (isset($_POST['hr_login'])){
 	$manager->Edit_Job();
 }elseif (isset($_POST['addvacancy'])){
 	$manager->addvacancy();
+}elseif (isset($_POST['viewapplicants'])){
+	$manager->viewapplicants();
 }
 
 
@@ -157,7 +159,7 @@ class manager{
 			$_SESSION['Email'] = 'username';
 
 
-			header("Location:message.php");
+			header("Location:sjsacc.php");
 			//header("Location:selleracc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
@@ -397,6 +399,21 @@ class manager{
 		$added=$utility->addvacancy($jobid);
 		
 		header("Location:hr_home.php");
+
+
+		
+	}
+
+	public function viewapplicants(){
+		$jobid=$_POST['viewapplicants'];
+   	 	
+
+    	$utility= new Utility();
+		$added=$utility->viewapplicants($jobid);
+
+		$_SESSION['applicants'] = $added;
+		
+		header("Location:candidateview.php");
 
 
 		

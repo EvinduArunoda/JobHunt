@@ -223,20 +223,22 @@
 		}
 
 		public function viewapplicants($jobid){
-			$query="SELECT VacancyID FROM jobvacancy WHERE JobID='$jobid' ";
-			$result1=$this->controller->runQuery($query);
+
+			$query1="SELECT VacancyID FROM jobvacancy WHERE JobID='$jobid' ";
+			$result1=$this->controller->runQuery($query1);
 			$vacancy_id = $result1[0]['VacancyID'];
 
-			$query="SELECT exam_id FROM job WHERE JobID='$jobid' ";
-			$result2=$this->controller->runQuery($query);
+			$query2="SELECT exam_id FROM job WHERE JobID='$jobid' ";
+			$result2=$this->controller->runQuery($query2);
 			$exam_id = $result2[0]['exam_id'];
 
 
 
-			$query="SELECT VacancyID FROM jobvacancy WHERE JobID='$jobid' ";
+			$query3="SELECT FirstName,JobseekerID FROM jobseeker,application WHERE VacancyID='$vacancy_id' ";
+			$result3=$this->controller->runQuery($query3);
 
-			if($result){
-				return $result;
+			if($result3){
+				return $result3;
 			}else{
 				return null;
 			}
