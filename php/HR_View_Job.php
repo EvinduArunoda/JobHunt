@@ -59,17 +59,21 @@ $connection = $db->getConnection(); ?>
 				</div>
 				<form action="manager.php" method = "post">
 				<div>
+			
+	
+				<div>
 			<?php echo ('
-			<button type="submit" name="addexamtojob" value = "'.$jobid.'" class="button button1">Add</button>');?>
+			<button type="submit" name="addvacancy" value = "'.$jobid.'" class="button button1">Add Vacancy</button>');?>
 		</a>
 		</div>
 	</form>
 			</div>
-			<div>
-					<a href="../php/editjob.php" > 
-			<button type="button" class="button button2">Edit</button>
+			<form action="manager.php" method = "post">
+			<?php echo ('
+			<button type="submit" name="addexamtojob" value = "'.$jobid.'" class="button button2">Add Exam</button>');?>
 		</a>
 		</div>
+	</form>
 			</div>
 		</div>
 	</div>

@@ -209,6 +209,20 @@
 			return $result;
 		}
 
+		public function addvacancy($jobid){
+
+			$status = 1;
+			
+			$query="INSERT INTO jobvacancy (JobID,Status) VALUES('$jobid','$status')";
+			$result=$this->controller->insertQuery($query);
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
+
 
 		
 
