@@ -1,17 +1,17 @@
- <?php 
+ <?php
 	require_once('logger.php');
 	require_once('Utility.php');
-	require_once('initialize.php'); 
+	require_once('initialize.php');
 	require_once('jobseeker.php');
 	require_once('hr.php');
 ?>
 
-<?php 
+<?php
 // JS functionalities
 if(isset($_POST['signup_JS'])){
-	$manager->signupJS();  
+	$manager->signupJS();
 }elseif (isset($_POST['login_JS'])){
-	$manager->loginJS(); 	
+	$manager->loginJS();
 }elseif (isset($_POST['add_exam'])){
 	$manager->addexam();
 }elseif (isset($_POST['add_job'])){
@@ -20,6 +20,9 @@ if(isset($_POST['signup_JS'])){
 	$manager->loadexam();
 }elseif (isset($_POST['remove_Job'])){
 	$manager->removeJob();
+}
+elseif (isset($_POST['start_exam_Job'])){
+	$manager->loadexam();
 }
 // HR functios
 
@@ -35,6 +38,7 @@ elseif (isset($_POST['hr_login'])){
 	$manager->AddExamto_Job();
 }elseif (isset($_POST['addquestion'])){
 	$manager->addquestion();
+}
 }elseif (isset($_POST['Edit_Job'])){
 	$manager->Edit_Job();
 }elseif (isset($_POST['addvacancy'])){
@@ -45,12 +49,13 @@ elseif (isset($_POST['hr_login'])){
 
 
 
+
 class manager{
 	private $mylogger;
 	private $msg;
 	private $JS;
 	private $isHR;
-	
+
 	private static $sessions=array();
 
 	public static function getInstance($key)
@@ -117,7 +122,7 @@ class manager{
 
 					header("Location:JSlogin.php");
 					$this->msg = "Done";
-					//$this->getsellerRequestsList();					
+					//$this->getsellerRequestsList();
 				}else{
 				$this->msg="Something went wrong. Please try again or please check your email.";
 				}
@@ -130,10 +135,10 @@ class manager{
 			}
 			if($this->msg == "Done"){}
 			else{
-			header("Location:SignupError.php?msg=".$this->msg);}
-			
+			//header("Location:SignupError.php?msg=".$this->msg);}
+			echo $this->msg;
 
-		
+		}
 	}
 
 
@@ -142,14 +147,14 @@ class manager{
 		$this->msg = "";
 
 		$email=$_POST['JS_email'];
-		$psw=$_POST['password'];	
+		$psw=$_POST['password'];
 		$this->mylogger = new logger($email,$psw);
 		$result=$this->mylogger->login();
 		if ($result){
 
-			//require_once('initialize.php'); 
+			//require_once('initialize.php');
 			//$db = Database::getInstance();
-			//$connection = $db->getConnection(); 
+			//$connection = $db->getConnection();
 			echo "Logged In";
 			$_SESSION['set']="set";
 			$utility=new Utility();
@@ -159,12 +164,12 @@ class manager{
 			$_SESSION['Email'] = 'username';
 
 
-			header("Location:sjsacc.php");
+			header("Location:sJSACC.php");
 			//header("Location:selleracc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
 			//if($gotInfo){
-			//	$gotlist=$this->getSellersItemList(); 
+			//	$gotlist=$this->getSellersItemList();
 			//	echo "<pre>";
 			//	var_dump($gotlist);
 			//	echo "</pre>";
@@ -175,7 +180,7 @@ class manager{
 		}
 		else{
 			$this->msg = "Password, Username mismatch";
-			header("Location:SignupError.php?msg=".$this->msg);
+			header("Location:LoginError.php");
 		}
 	}
 
@@ -185,7 +190,7 @@ class manager{
     	$min=$_POST['min'];
     	$exam_date=$_POST['exam_date'];
     	$duration = (int)$min + (int)$hrs*60;
-   		
+
    		$utility=new Utility();
 		$job_added=$utility->addexam($job,$duration,$exam_date);
 
@@ -194,11 +199,11 @@ class manager{
 			$jobID = $jobIDarray['exam_id'];
 			$_SESSION['current_jb_id']=$jobID;
 
-			header("Location:sel_questions.php");			
+			header("Location:sel_questions.php");
 
 		}
 
-		
+
 	}
 
 	public function addjob(){
@@ -214,7 +219,7 @@ class manager{
 		$this->getAllJobList();
 		header("Location:hr_home.php");
 
-	
+
 	}
 
 	public function loadexam(){
@@ -225,7 +230,7 @@ class manager{
 		$duration = $examtime['duration']*60;
 		$_SESSION['duration'] = $duration;
 		$_SESSION['start_time'] = time();
-		//$_SESSION['examID'] = 
+		//$_SESSION['examID'] =
 		header("Location:exam.php");
 
 	}
@@ -238,7 +243,7 @@ class manager{
 
 	}
 
-	
+
 	public function submitanswer(){
 		$examID = $_POST['examID'];
 		$user = $_SESSION['UserID'];
@@ -262,7 +267,7 @@ class manager{
   				if($answer == $correct_ans){
   					$mark = $mark + 1;
   				}
-  
+
 		}
 	}
 
@@ -281,9 +286,6 @@ class manager{
 		$result=$this->mylogger->login_hr();
 		if ($result){
 			$_SESSION['set']="set";
-			$_SESSION['JobseekerID']= 1 ;
-			$_SESSION['Email'] = 'HR team';
-
 			$this->isHR=true;
 			$this->getAllJobList();
 			$this->getAllQuestion();
@@ -292,8 +294,8 @@ class manager{
 			header("Location:hr_home.php");
 		}else{
 			echo "something went wrong.Please try again";
-		}	
-	
+		}
+
 	}
 
 	public function getAllJobList(){
@@ -318,7 +320,7 @@ class manager{
 
 		$utility= new Utility();
 		$AllQuestions=$utility->removeJob($jobid);
-		
+
 	}
 
 	public function addtoexam(){
@@ -327,7 +329,7 @@ class manager{
 			if($result['Q_id'] = $_POST['Add_toExam']){
 				$q_id = $result['Q_id'];
 			}
-    	
+
   		}
 
 		$exam = $_SESSION['current_jb_id'];
@@ -335,7 +337,7 @@ class manager{
 		$utility= new Utility();
 		$result=$utility->addtoexam($q_id,$exam);
 
-		header("Location:sel_questions.php");	
+		header("Location:sel_questions.php");
 	}
 
 	public function addexamtojob(){
@@ -366,7 +368,7 @@ class manager{
 		header("Location:hr_home.php");
 
 
-		
+
 	}
 
 	public function addquestion(){
@@ -383,45 +385,8 @@ class manager{
 		header("Location:hr_home.php");
 
 
-		
+
 	}
-
-	public function Edit_Job(){
-		
-		header("Location:editjob.php");
-
-
-		
-	}
-
-	public function addvacancy(){
-		$jobid=$_POST['addvacancy'];
-   	 	
-
-    	$utility= new Utility();
-		$added=$utility->addvacancy($jobid);
-		
-		header("Location:hr_home.php");
-
-
-		
-	}
-
-	public function viewapplicants(){
-		$jobid=$_POST['viewapplicants'];
-   	 	
-
-    	$utility= new Utility();
-		$added=$utility->viewapplicants($jobid);
-
-		$_SESSION['applicants'] = $added;
-		
-		header("Location:candidateview.php");
-
-
-		
-	}
-
 
 
 

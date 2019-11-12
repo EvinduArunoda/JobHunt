@@ -33,15 +33,18 @@ else{
 		<br>
 		<br>
 		<br>
-        <div class="input-group" style="width:30%;height:50%;margin-left:50%">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"style="width:10%;height: 10%" name="search">
-        <div class="input-group-append" style="width:20%">
-          <button class="btn btn-primary" type="submit" style="background-color:#2C3E50;color:floralwhite;height:10%;width:40%">
+		
+		<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" action="job.php">
+        <div class="input-group" style="width:230%;height:80%;margin-left:350%">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"style="width:40%;height: 50%" name="search">
+        <div class="input-group-append" style="width:20%;height:100%">
+          <button class="btn btn-primary" type="submit" style="background-color:#2C3E50;color:floralwhite;height:2rem;width:40%">
             <i class="fa fa-search"></i>
           </button>
         </div>
             </div>
-		<div class="box clearfix">
+						</form>
+			<div class="box clearfix" style="margin-top:6%">
 		<div class="rest">
 			<div class="data clearfix">
 
@@ -54,11 +57,11 @@ else{
 					<div class="additem clearfix">
 					<a href="addjob.php"><img src='../img/profile.png' style="width: 80%;height:5=80%">
 					<br>
-					<br>View Profile</a>
+					<br>Profile</a>
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/application.png' style="width: 50%;height:50%">
+					<a href="applicationHistory.php"><img src='../img/application.png' style="width: 50%;height:50%">
 					<br>
 					<br>View 
 					<br>Applications History</a>

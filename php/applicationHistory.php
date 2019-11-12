@@ -1,9 +1,9 @@
 <?php require_once('initialize.php') ;
 $db = Database::getInstance();
 $connection = $db->getConnection();
-$uid = $_SESSION['uid'];
-$q = mysqli_query($connection,"SELECT * FROM (application join vacancy on application.VacancyID = jobvacancy.VacancyID) join job on jobvacancy.JobID = job.JobID) join  WHERE JobID = '$id'");
-$query = $q->fetch_assoc();
+// $uid = $_SESSION['uid'];
+// $q = mysqli_query($connection,"SELECT * FROM (application join vacancy on application.VacancyID = jobvacancy.VacancyID) join job on jobvacancy.JobID = job.JobID) join  WHERE JobID = '$id'");
+// $query = $q->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@ $query = $q->fetch_assoc();
 
   <!-- Custom styles for this template -->
 
-     <link href="../css/job.css" rel="stylesheet" type="text/css">
+     <link href="../css/application.css" rel="stylesheet" type="text/css">
 
 </head>
 <header>
@@ -53,6 +53,9 @@ $query = $q->fetch_assoc();
           <br>
           <br>Home Page</a>
         </div>
+        <div class="additem clearfix">
+        <div class="logout"><a href="logout.php"><img src='../img/logout-icon.png'>Logout</a></div>
+        </div>
     </div>
   </div>
 </div>
@@ -63,38 +66,29 @@ $query = $q->fetch_assoc();
  <body id='page top'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<div class="container" style='margin-top:10%'>
+<div class="container" style='margin-top:15%'>
     <div class="row">
-       <?php
-            while($data = $query->fetch_assoc())
-                {
-                    $id = $data['JobID'];
-        ?>
+
         <div class="col-md-6 col-sm-6">
             <div class="product-grid6">
                 <div class="product-content" style="margin-top:1%">
-                    <h3 class="title" style="font-size:30px"><?php echo $data['Title'];?></h3>
-                    <div class="price"><h5 style="color:black">Results</h5><?php echo $data['marks'];?>
+
+                    <h3 class="title" style="font-size:30px">Software Engineer</h3>
+
+                    <div class="price"><h5 style="color:black">Results</h5>1 marks
                     </div>
-                    <div class="price"><h5 style="color:black">Results</h5><?php echo $data['status'];?>
+
+                    <div class="price"><h5 style="color:black">Status</h5>Not Recruited
                     </div>
 
                 </div>
                 <ul class="social">
-                    <?php
-                        $output = '<li><a href="jobdetails.php?id='.$id.'" data-tip="View Job Description"><i class="fa fa-eye"></i></a></li>';
-                        echo ("$output");
-                    ?>
+
                 </ul>
             </div>
             <hr>
         </div>
-        <?php
-            
-        ?>
-    <?php
 
-?>
     </div>
 
 </div>

@@ -2,7 +2,7 @@
 require_once('utility.php'); ?>
 
 
-<?php require_once('Connection.php'); 
+<?php require_once('Connection.php');
       require_once('initialize.php');
  $db = Database::getInstance();
  $conn = $db->getConnection();?>
@@ -60,13 +60,13 @@ if (is_null($resultArr)){
       <p class="card-text">'.'2. '.$result['A2'].'</p>
       <p class="card-text">'.'3. '.$result['A3'].'</p>
       <p class="card-text">'.'4. '.$result['A4'].'</p>
-      
+
 
       <input type="text"  name="'.$result['Q_id'].'" placeholder="Your Answer"  id="">
 
-     
+
     <div class="container">
-      
+
       </div>
     </div>
   </div>

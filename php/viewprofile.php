@@ -65,7 +65,7 @@ $query = $q->fetch_assoc();
 
 </div>
 	 <div class="col-xl-5 col-lg-5" style="margin-top:10%">
-						 <div class="card shadow mb-4" style="margin-top:-20%;width:700px;margin-left:10%">
+						 <div class="card shadow mb-4" style="margin-top:-23%;width:700px;margin-left:10%">
 							 <!-- Card Body -->
 							 <div class="card-body">
 											 <div align="center">
@@ -164,6 +164,7 @@ $query = $q->fetch_assoc();
 						 <div class="card shadow mb-4" style="margin-top:-20%">
 							 <!-- Card Body -->
 							 <div class="card-body">
+							 <div align="center"> <h3>Curriculum Vitae</h3></div>
 								 <hr>
 											 <div align="center" style="height:500px">
 													 <img id='img' class="thumbnail img-responsive" src='<?php echo $query['img_src'] ?>' width="800px" height="500px">

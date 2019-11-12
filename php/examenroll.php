@@ -84,7 +84,7 @@ $count = mysqli_num_rows($q);
                             <h3> <?php echo $query['D_L'] ?></h3><br> <hr> <br>
                             <div class="container">
                               <div class="intro-text">
-                                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="margin-top: 1%;margin-bottom: 5%;
+                                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href='exam.php' style="margin-top: 1%;margin-bottom: 5%;
                                 height:60px;background-color:mediumaquamarine" href="examination.php" ><h3><strong>Start Exam<strong></h3></a>
                               </div>
     </div>
