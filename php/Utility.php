@@ -222,6 +222,26 @@
 			}
 		}
 
+		public function viewapplicants($jobid){
+			$query="SELECT VacancyID FROM jobvacancy WHERE JobID='$jobid' ";
+			$result1=$this->controller->runQuery($query);
+			$vacancy_id = $result1[0]['VacancyID'];
+
+			$query="SELECT exam_id FROM job WHERE JobID='$jobid' ";
+			$result2=$this->controller->runQuery($query);
+			$exam_id = $result2[0]['exam_id'];
+
+
+
+			$query="SELECT VacancyID FROM jobvacancy WHERE JobID='$jobid' ";
+
+			if($result){
+				return $result;
+			}else{
+				return null;
+			}
+		}
+
 
 
 		
