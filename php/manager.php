@@ -153,7 +153,7 @@ class manager{
 			$_SESSION['Email'] = 'username';
 
 
-			header("Location:index.php");
+			header("Location:sJSAcc.php");
 			//header("Location:selleracc.php");
 
 			//$gotInfo=($_SESSION['currentseller']->getBasicInfoByEmail($email));
