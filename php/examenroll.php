@@ -2,7 +2,6 @@
 $db = Database::getInstance();
 $connection = $db->getConnection();
 $id = $_SESSION['uid'];
-$_SESSION['exam_id'] = 1;
 $q = mysqli_query($connection,"SELECT * FROM exam WHERE exam_id = '1'");
 $query = $q->fetch_assoc();
 $count = mysqli_num_rows($q);
@@ -86,7 +85,7 @@ $count = mysqli_num_rows($q);
                             <div class="container">
                               <div class="intro-text">
                                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="margin-top: 1%;margin-bottom: 5%;
-                                height:60px;background-color:mediumaquamarine" href="exam.php" ><h3><strong>Start Exam<strong></h3></a>
+                                height:60px;background-color:mediumaquamarine" href="examination.php" ><h3><strong>Start Exam<strong></h3></a>
                               </div>
     </div>
                         </div>
