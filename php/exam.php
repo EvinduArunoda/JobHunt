@@ -43,7 +43,7 @@ require_once('utility.php'); ?>
 <form action="manager.php" method="post">
 
 <?php 
-$examID  =1 ;              //get exam id here somehow
+$examID  = $_SESSION['exam_id'] ;              //get exam id here somehow
 
 if((time()-$_SESSION['start_time'])<$_SESSION['duration']){
 $manager=new manager();
@@ -73,6 +73,7 @@ if (is_null($resultArr)){
   </center>
   <br> <br>');
   }
+  $_SESSION['timeout'] = 1;
   echo('<input type="hidden" id="examID" name="examID" value='.$examID.'>
     <center>
     <button type="submit" class="bttn" name="submit_answer" value="best">Submit Answers</button>
@@ -80,6 +81,7 @@ if (is_null($resultArr)){
   echo ($_SESSION['duration']-(time()-$_SESSION['start_time']));
 };
 }else{
+  $_SESSION['timeout'] = 0;
   echo ('<center><br> <br>
     <div class="card1 " >
     <div class="card1-body">
@@ -88,6 +90,7 @@ if (is_null($resultArr)){
     <br> <br>
       <h3> Exam Ended </h3>
       <br> 
+      <input type="hidden" id="examID" name="examID" value='.$examID.'>
         <button type="submit" class="bttn" name="submit_answer" value="best">Submit Answer</button>
      </center>
     <div class="container">

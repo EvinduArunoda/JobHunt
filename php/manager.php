@@ -251,6 +251,8 @@ class manager{
 		if (is_null($resultArr)){
   			echo('no questions added yet.');
 		}else{
+			if($_SESSION['timeout']){
+
   			foreach($resultArr as $result) {
   				$q_id = $result['Q_id'];
   				$correct_ans = $result['Ans'];
@@ -262,6 +264,7 @@ class manager{
   				}
   
 		}
+	}
 
 		$submitted = $utility->submit_grade($examID,$user,$mark);
 
