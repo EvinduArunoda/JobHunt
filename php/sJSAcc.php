@@ -55,7 +55,7 @@ else{
 					</div>
 
 					<div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/profile.png' style="width: 80%;height:5=80%">
+					<a href="manager.php"><img src='../img/profile.png' style="width: 80%;height:5=80%">
 					<br>
 					<br>Profile</a>
 					</div>
@@ -68,13 +68,13 @@ else{
 					</div>
                 
                     <div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/notification.png' style="width: 50%;height:5=50%">
+					<a href="manager.php"><img src='../img/notification.png' style="width: 50%;height:5=50%">
 					<br>
 					<br>View 
 					<br>Notifications</a>
 					</div>
                     <div class="additem clearfix">
-					<a href="addjob.php"><img src='../img/editprofile.png' style="width: 60%;height:60%">
+					<a href="signup.php"><img src='../img/editprofile.png' style="width: 60%;height:60%">
 					<br>
 					<br>Edit Profile</a>
 					</div>

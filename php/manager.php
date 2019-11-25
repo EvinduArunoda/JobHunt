@@ -38,7 +38,6 @@ elseif (isset($_POST['hr_login'])){
 	$manager->AddExamto_Job();
 }elseif (isset($_POST['addquestion'])){
 	$manager->addquestion();
-}
 }elseif (isset($_POST['Edit_Job'])){
 	$manager->Edit_Job();
 }elseif (isset($_POST['addvacancy'])){
@@ -386,6 +385,42 @@ class manager{
 
 
 
+	}
+
+	public function Edit_Job(){
+		
+		header("Location:editjob.php");
+
+
+		
+	}
+
+	public function addvacancy(){
+		$jobid=$_POST['addvacancy'];
+   	 	
+
+    	$utility= new Utility();
+		$added=$utility->addvacancy($jobid);
+		
+		header("Location:hr_home.php");
+
+
+		
+	}
+
+	public function viewapplicants(){
+		$jobid=$_POST['viewapplicants'];
+   	 	
+
+    	$utility= new Utility();
+		$added=$utility->viewapplicants($jobid);
+
+		$_SESSION['applicants'] = $added;
+		
+		header("Location:candidateview.php");
+
+
+		
 	}
 
 
